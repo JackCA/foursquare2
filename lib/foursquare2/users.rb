@@ -10,6 +10,17 @@ module Foursquare2
       return_error_or_body(response, response.body.response.user)
     end
 
+    # Get leaderboard standing for authenticated user
+    # @param [Hash]  options
+    # @option options Integer :neighbors - Number of leaderboard users to return
+
+    def user_leaderboard(options={})
+      response = connection.get do |req|
+        req.url "users/leaderboard", options
+      end
+      return_error_or_body(response, response.body.response)
+    end
+
     # Search for users
     # @param [Hash]  options
     # @option options String :phone - Match on phone number

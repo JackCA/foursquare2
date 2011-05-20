@@ -34,6 +34,15 @@ class TestUsers < Test::Unit::TestCase
       tips.items.size.should == 1 
     end
 
+  #TODO  
+
+=begin
+    should 'fetch leaderboard' do
+      stub_get("https://api.foursquare.com/v2/users/self/leaderboard?oauth_token=#{@client.oauth_token}", "user_leaderboard.json")
+      neighbors = @client.user_leaderboard
+    end      
+=end
+
     #TODO refactoring all call to method stub_get
 
     should "list only user with tip #{QUERY}" do
