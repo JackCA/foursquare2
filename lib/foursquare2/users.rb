@@ -18,7 +18,7 @@ module Foursquare2
       response = connection.get do |req|
         req.url "users/leaderboard", options
       end
-      return_error_or_body(response, response.body.response)
+      return_error_or_body(response, response.body.response.leaderboard)
     end
 
     # Search for users
